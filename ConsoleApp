@@ -1,0 +1,7 @@
+Get the config value from appsettings.json in console app
+
+var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .Build();
+        List<Users> userSettings = configuration.GetSection("Users").Get<List<Users>>();
